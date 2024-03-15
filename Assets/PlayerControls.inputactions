@@ -1,0 +1,226 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Player Movement",
+            "id": "97b81f6c-f1b0-4f18-988c-e1e235b3233c",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "4a6be858-ed7e-40e4-ad58-4ca6594158ff",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Keybroad",
+                    "id": "0cca488e-6349-45d9-8a80-4a284179fb97",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "7a309bd5-83fe-4503-80d2-3986efda8072",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "32327581-105d-4741-86e8-f32254f241b9",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e100349b-9afa-4d02-b82c-3b4e31a40b4b",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0fc1abd9-16ef-496d-aba9-daf634969c82",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Player Actions",
+            "id": "e3f94583-7413-48cf-a870-8b63b59e9738",
+            "actions": [
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "326f783d-0761-4ca1-a58c-2802cce58956",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "PassThrough",
+                    "id": "1d35c160-8177-4064-b64a-37bfcd4ea64c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "896967eb-ff01-475d-89d1-db16f6cc5273",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d89af0da-9db4-47a7-99ce-f6ab2ddce8ea",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player Camera",
+            "id": "034f50da-bdef-470b-8339-192f66334a98",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "dfb23bd0-eb1d-49e6-bf81-f549f97e4430",
+                    "expectedControlType": "Delta",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3d3dbb0a-b792-425a-92fd-01dda6278d3b",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player Cameras [not using]",
+            "id": "48e1af6a-fd6d-4553-90cd-96a2a0fcd630",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "PassThrough",
+                    "id": "32afc872-c192-4c2f-a287-d2ec1ee4d0f3",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Mouse",
+                    "id": "8ad5d164-fbcc-4c92-9562-b12108d816f7",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f8aca3a4-3548-4585-bebf-7e50dc21df67",
+                    "path": "<Mouse>/delta/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "acde555a-c869-4a80-807b-99fba9c44ff0",
+                    "path": "<Mouse>/delta/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a931b6cd-8337-4867-b7af-47f953a13cee",
+                    "path": "<Mouse>/delta/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "7025d21b-0225-4b9e-954e-2238c8ac7573",
+                    "path": "<Mouse>/delta/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
