@@ -14,7 +14,8 @@ namespace ALEX
 
         public void StartNewGame()
         {
-            StartCoroutine(WorldSavedGameManager.instance.LoadNewGame());
+            WorldSavedGameManager.instance.CreateNewGame();
+            StartCoroutine(WorldSavedGameManager.instance.LoadWorldScene());
         }
     }
 }

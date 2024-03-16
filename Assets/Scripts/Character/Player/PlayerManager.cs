@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ALEX
@@ -56,6 +57,21 @@ namespace ALEX
                 playerNetworkManager.currentStamina.Value = playerStatManager.CalcuStaminaBasedOnLV(playerNetworkManager.endurance.Value);
                 PlayerUIManager.instance.playerUIHudManager.SetMaxStaminaVal(playerNetworkManager.maxStamina.Value);
             }
+        }
+
+        public void SaveGameDataToCurrentCharacter(ref CharacterSavedData currentCharacterData)
+        {
+            currentCharacterData.characterName = playerNetworkManager.characterName.Value.ToString();
+            currentCharacterData.xPos = transform.position.x;
+            currentCharacterData.yPos = transform.position.y;
+            currentCharacterData.zPos = transform.position.z;
+        }
+
+        public void LoadGameDataFromCurrentCharacter(ref CharacterSavedData currentCharacterData)
+        {
+            playerNetworkManager.characterName.Value = currentCharacterData.characterName;
+            Vector3 currentPos = new(currentCharacterData.xPos, currentCharacterData.yPos, currentCharacterData.zPos);
+            transform.position = currentPos;
         }
     }
 }
