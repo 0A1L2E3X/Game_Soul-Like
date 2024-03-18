@@ -24,19 +24,19 @@ namespace ALEX
         [Header("CURRENT CHARACTER DATA")]
         public CharacterSlot currentSlotUsing;
         public CharacterSavedData currentCharacterData;
-        private string fileName;
+        private string saveFileName;
 
         [Header("CHARACTER SLOTS")]
         public CharacterSavedData characterSlot01;
-        //public CharacterSavedData characterSlot02;
-        //public CharacterSavedData characterSlot03;
-        //public CharacterSavedData characterSlot04;
-        //public CharacterSavedData characterSlot05;
-        //public CharacterSavedData characterSlot06;
-        //public CharacterSavedData characterSlot07;
-        //public CharacterSavedData characterSlot08;
-        //public CharacterSavedData characterSlot09;
-        //public CharacterSavedData characterSlot10;
+        public CharacterSavedData characterSlot02;
+        public CharacterSavedData characterSlot03;
+        public CharacterSavedData characterSlot04;
+        public CharacterSavedData characterSlot05;
+        public CharacterSavedData characterSlot06;
+        public CharacterSavedData characterSlot07;
+        public CharacterSavedData characterSlot08;
+        public CharacterSavedData characterSlot09;
+        public CharacterSavedData characterSlot10;
 
         private void Awake()
         {
@@ -47,6 +47,7 @@ namespace ALEX
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
+            PreloadAllProfiles();
         }
 
         private void Update()
@@ -64,9 +65,11 @@ namespace ALEX
             }
         }
 
-        private void DetermineFileNameBasedCurrentSlotUsing()
+        public string DetermineFileNameBasedCurrentSlotUsing(CharacterSlot characterSlot)
         {
-            switch (currentSlotUsing)
+            string fileName = "";
+
+            switch (characterSlot)
             {
                 case CharacterSlot.CharacterSlot_01:
                     fileName = "characterSlot_01";
@@ -101,22 +104,24 @@ namespace ALEX
                 default:
                     break;
             }
+
+            return fileName;
         }
 
         public void CreateNewGame()
         {
-            DetermineFileNameBasedCurrentSlotUsing();
+            saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
             currentCharacterData = new CharacterSavedData();
         }
 
         public void LoadGame()
         {
-            DetermineFileNameBasedCurrentSlotUsing();
+            saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
             savedFileDataManager = new SavedFileDataManager();
             savedFileDataManager.savedDataPath = Application.persistentDataPath;
-            savedFileDataManager.savedFileName = fileName;
+            savedFileDataManager.savedFileName = saveFileName;
             currentCharacterData = savedFileDataManager.LoadSavedFile();
 
             StartCoroutine(LoadWorldScene());
@@ -124,15 +129,53 @@ namespace ALEX
 
         public void SaveGame()
         {
-            DetermineFileNameBasedCurrentSlotUsing();
+            saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
             savedFileDataManager = new SavedFileDataManager();
             savedFileDataManager.savedDataPath = Application.persistentDataPath;
-            savedFileDataManager.savedFileName = fileName;
+            savedFileDataManager.savedFileName = saveFileName;
 
             player.SaveGameDataToCurrentCharacter(ref currentCharacterData);
 
             savedFileDataManager.CreateNewCharacterFile(currentCharacterData);
+        }
+
+        private void PreloadAllProfiles()
+        {
+            savedFileDataManager = new SavedFileDataManager
+            {
+                savedDataPath = Application.persistentDataPath
+            };
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_01);
+            characterSlot01 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_02);
+            characterSlot02 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_03);
+            characterSlot03 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_04);
+            characterSlot04 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_05);
+            characterSlot05 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_06);
+            characterSlot06 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_07);
+            characterSlot07 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_08);
+            characterSlot08 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_09);
+            characterSlot09 = savedFileDataManager.LoadSavedFile();
+
+            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_10);
+            characterSlot09 = savedFileDataManager.LoadSavedFile();
         }
 
         public IEnumerator LoadWorldScene()
