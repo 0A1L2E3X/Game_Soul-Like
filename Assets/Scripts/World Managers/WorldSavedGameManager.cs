@@ -9,7 +9,7 @@ namespace ALEX
     {
         public static WorldSavedGameManager instance;
 
-        [SerializeField] PlayerManager player;
+        public PlayerManager player;
 
         [Header("SAVE/LOAD")]
         [SerializeField] bool saveGame;
@@ -108,11 +108,112 @@ namespace ALEX
             return fileName;
         }
 
-        public void CreateNewGame()
+        public void AttemptToCreateNewGame()
         {
-            saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
+            savedFileDataManager = new SavedFileDataManager();
+            savedFileDataManager.saveDataPath = Application.persistentDataPath;
 
-            currentCharacterData = new CharacterSavedData();
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_01);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_01;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_02);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_02;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_03);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_03;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_04);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_04;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_05);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_05;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_06);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_06;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_07);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_07;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_08);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_08;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_09);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_09;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_10);
+
+            if (!savedFileDataManager.CheckFileExist())
+            {
+                currentSlotUsing = CharacterSlot.CharacterSlot_10;
+                currentCharacterData = new CharacterSavedData();
+                StartCoroutine(LoadWorldScene());
+                return;
+            }
+
+            TitleScreenManager.instance.DisplayNoFreeCharacter();
         }
 
         public void LoadGame()
@@ -120,8 +221,8 @@ namespace ALEX
             saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
             savedFileDataManager = new SavedFileDataManager();
-            savedFileDataManager.savedDataPath = Application.persistentDataPath;
-            savedFileDataManager.savedFileName = saveFileName;
+            savedFileDataManager.saveDataPath = Application.persistentDataPath;
+            savedFileDataManager.saveFileName = saveFileName;
             currentCharacterData = savedFileDataManager.LoadSavedFile();
 
             StartCoroutine(LoadWorldScene());
@@ -132,55 +233,68 @@ namespace ALEX
             saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
             savedFileDataManager = new SavedFileDataManager();
-            savedFileDataManager.savedDataPath = Application.persistentDataPath;
-            savedFileDataManager.savedFileName = saveFileName;
+            savedFileDataManager.saveDataPath = Application.persistentDataPath;
+            savedFileDataManager.saveFileName = saveFileName;
 
             player.SaveGameDataToCurrentCharacter(ref currentCharacterData);
 
             savedFileDataManager.CreateNewCharacterFile(currentCharacterData);
         }
 
+        public void DeleteGame(CharacterSlot characterSlot)
+        {
+            saveFileName = DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+
+            savedFileDataManager = new SavedFileDataManager();
+            savedFileDataManager.saveDataPath = Application.persistentDataPath;
+            savedFileDataManager.saveFileName = saveFileName;
+            savedFileDataManager.DeleteSavedFile();
+        }
+
         private void PreloadAllProfiles()
         {
             savedFileDataManager = new SavedFileDataManager
             {
-                savedDataPath = Application.persistentDataPath
+                saveDataPath = Application.persistentDataPath
             };
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_01);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_01);
             characterSlot01 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_02);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_02);
             characterSlot02 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_03);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_03);
             characterSlot03 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_04);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_04);
             characterSlot04 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_05);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_05);
             characterSlot05 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_06);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_06);
             characterSlot06 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_07);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_07);
             characterSlot07 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_08);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_08);
             characterSlot08 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_09);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_09);
             characterSlot09 = savedFileDataManager.LoadSavedFile();
 
-            savedFileDataManager.savedFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_10);
+            savedFileDataManager.saveFileName = DetermineFileNameBasedCurrentSlotUsing(CharacterSlot.CharacterSlot_10);
             characterSlot09 = savedFileDataManager.LoadSavedFile();
         }
 
         public IEnumerator LoadWorldScene()
         {
             AsyncOperation loadOperation = SceneManager.LoadSceneAsync(worldSceneIndex);
+            //AsyncOperation loadOperation = SceneManager.LoadSceneAsync(currentCharacterData.sceneIndex);
+
+            player.LoadGameDataFromCurrentCharacter(ref currentCharacterData);
 
             yield return null;
         }

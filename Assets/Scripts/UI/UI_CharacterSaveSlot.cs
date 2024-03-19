@@ -25,12 +25,12 @@ namespace ALEX
         {
             savedFileDataManager = new SavedFileDataManager
             {
-                savedDataPath = Application.persistentDataPath
+                saveDataPath = Application.persistentDataPath
             };
 
             if (characterSlot == CharacterSlot.CharacterSlot_01)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -44,7 +44,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_02)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -58,7 +58,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_03)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -72,7 +72,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_04)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -86,7 +86,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_05)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -100,7 +100,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_06)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -114,7 +114,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_07)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -128,7 +128,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_08)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -142,7 +142,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_09)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -156,7 +156,7 @@ namespace ALEX
 
             else if (characterSlot == CharacterSlot.CharacterSlot_10)
             {
-                savedFileDataManager.savedFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
+                savedFileDataManager.saveFileName = WorldSavedGameManager.instance.DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
                 if (savedFileDataManager.CheckFileExist())
                 {
@@ -173,6 +173,11 @@ namespace ALEX
         {
             WorldSavedGameManager.instance.currentSlotUsing = characterSlot;
             WorldSavedGameManager.instance.LoadGame();
+        }
+
+        public void SelectCurrentSlot()
+        {
+            TitleScreenManager.instance.SelectCharacterSlot(characterSlot);
         }
     }
 }

@@ -8,23 +8,23 @@ namespace ALEX
 {
     public class SavedFileDataManager
     {
-        public string savedDataPath = "";
-        public string savedFileName = "";
+        public string saveDataPath = "";
+        public string saveFileName = "";
 
         public bool CheckFileExist()
         {
-            if (File.Exists(Path.Combine(savedDataPath, savedFileName))) { return true; }
+            if (File.Exists(Path.Combine(saveDataPath, saveFileName))) { return true; }
             else { return false; }
         }
 
         public void DeleteSavedFile()
         {
-            File.Delete(Path.Combine(savedDataPath, savedFileName));
+            File.Delete(Path.Combine(saveDataPath, saveFileName));
         }
 
         public void CreateNewCharacterFile(CharacterSavedData data)
         {
-            string filePath = Path.Combine(savedDataPath, savedFileName);
+            string filePath = Path.Combine(saveDataPath, saveFileName);
 
             try
             {
@@ -44,7 +44,7 @@ namespace ALEX
 
             catch (Exception e)
             {
-                Debug.Log("ERROR WHILE SAVING DATA, CANNOT SAVE GAME DATA" + savedDataPath + "\n" + e);
+                Debug.Log("ERROR WHILE SAVING DATA, CANNOT SAVE GAME DATA" + saveDataPath + "\n" + e);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ALEX
         {
             CharacterSavedData data = null;
 
-            string loadPath = Path.Combine(savedDataPath, savedFileName);
+            string loadPath = Path.Combine(saveDataPath, saveFileName);
 
             if (File.Exists(loadPath))
             {
