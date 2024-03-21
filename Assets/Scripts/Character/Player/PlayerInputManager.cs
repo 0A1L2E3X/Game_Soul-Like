@@ -25,6 +25,7 @@ namespace ALEX
         [Header("==== PLAYER ACTIONS INPUT ====")]
         [SerializeField] bool dodgeInput = false;
         [SerializeField] bool sprintInput = false;
+        [SerializeField] bool jumpInput = false;
         
         private void Awake()
         {
@@ -56,6 +57,7 @@ namespace ALEX
                 playerControls.PlayerCamera.Movement.performed += i => cameraInput = i.ReadValue<Vector2>();
 
                 playerControls.PlayerActions.Dodge.performed += i => dodgeInput = true;
+                playerControls.PlayerActions.Jump.performed += i => jumpInput = true;
 
                 playerControls.PlayerActions.Sprint.performed += i => sprintInput = true;
                 playerControls.PlayerActions.Sprint.canceled += i => sprintInput = false;
@@ -95,7 +97,10 @@ namespace ALEX
             HandleDodgeInput();
 
             // ACTION SPRINTING FUNCTION
-            HandleSprinting();
+            HandleSprintInput();
+
+            // ACTION JUMP FUNCTION
+            HandleJumpInput();
         }
 
         // ==== MOVEMENT FUNCTION ====
@@ -132,7 +137,7 @@ namespace ALEX
             }
         }
 
-        private void HandleSprinting()
+        private void HandleSprintInput()
         {
             if (sprintInput)
             {
@@ -142,6 +147,16 @@ namespace ALEX
             else
             {
                 player.playerNetworkManager.isSprinting.Value = false;
+            }
+        }
+
+        private void HandleJumpInput()
+        {
+            if (jumpInput)
+            {
+                jumpInput = false;
+
+                player.playerLocomotionManager.AttemptToPerformJump();
             }
         }
     }

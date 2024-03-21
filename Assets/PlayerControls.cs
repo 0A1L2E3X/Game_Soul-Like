@@ -92,6 +92,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""1740af53-06e4-49aa-9c88-404fc3d73b74"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8e251223-c37a-4658-8361-2b870733e2e1"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e4c48400-cbdc-4d4d-aa87-53c9f07c942e"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""0ec3461a-edeb-4b42-93d0-b847ee015c51"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""851c9d8f-2b70-4058-a05c-007e1e3dbb91"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -115,6 +170,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""201a9486-f4d7-4526-b9a6-b9e2d91512c1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -140,39 +204,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Player Camera"",
-            ""id"": ""034f50da-bdef-470b-8339-192f66334a98"",
-            ""actions"": [
-                {
-                    ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""dfb23bd0-eb1d-49e6-bf81-f549f97e4430"",
-                    ""expectedControlType"": ""Delta"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""3d3dbb0a-b792-425a-92fd-01dda6278d3b"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""id"": ""7abb81ce-8b6b-4bb6-891b-5d633a3b6dab"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3dd2c753-bac3-40b8-9857-ede4d0f466d9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""Player Cameras [not using]"",
+            ""name"": ""Player Camera"",
             ""id"": ""48e1af6a-fd6d-4553-90cd-96a2a0fcd630"",
             ""actions"": [
                 {
@@ -240,6 +298,100 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""502d80a9-cca4-4da3-862e-a659f5f396d8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""fab97adf-a836-46ac-b1e1-0daa1394229b"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7c48ab5b-874d-42bc-859c-3825d82b8c20"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1844f3fd-251c-434e-b015-ef17f92833b1"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""bf5692aa-b38c-4e12-99fc-0fe25f52c8ec"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""Player Camera [delta]"",
+            ""id"": ""034f50da-bdef-470b-8339-192f66334a98"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""dfb23bd0-eb1d-49e6-bf81-f549f97e4430"",
+                    ""expectedControlType"": ""Delta"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3d3dbb0a-b792-425a-92fd-01dda6278d3b"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6efa322-bb76-421d-8db2-96887e112d2f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -281,12 +433,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Dodge = m_PlayerActions.FindAction("Dodge", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
+        m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         // Player Camera
         m_PlayerCamera = asset.FindActionMap("Player Camera", throwIfNotFound: true);
         m_PlayerCamera_Movement = m_PlayerCamera.FindAction("Movement", throwIfNotFound: true);
-        // Player Cameras [not using]
-        m_PlayerCamerasnotusing = asset.FindActionMap("Player Cameras [not using]", throwIfNotFound: true);
-        m_PlayerCamerasnotusing_Movement = m_PlayerCamerasnotusing.FindAction("Movement", throwIfNotFound: true);
+        // Player Camera [delta]
+        m_PlayerCameradelta = asset.FindActionMap("Player Camera [delta]", throwIfNotFound: true);
+        m_PlayerCameradelta_Movement = m_PlayerCameradelta.FindAction("Movement", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_X = m_UI.FindAction("X", throwIfNotFound: true);
@@ -399,12 +552,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
     private readonly InputAction m_PlayerActions_Dodge;
     private readonly InputAction m_PlayerActions_Sprint;
+    private readonly InputAction m_PlayerActions_Jump;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Dodge => m_Wrapper.m_PlayerActions_Dodge;
         public InputAction @Sprint => m_Wrapper.m_PlayerActions_Sprint;
+        public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -420,6 +575,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -430,6 +588,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -494,51 +655,51 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     }
     public PlayerCameraActions @PlayerCamera => new PlayerCameraActions(this);
 
-    // Player Cameras [not using]
-    private readonly InputActionMap m_PlayerCamerasnotusing;
-    private List<IPlayerCamerasnotusingActions> m_PlayerCamerasnotusingActionsCallbackInterfaces = new List<IPlayerCamerasnotusingActions>();
-    private readonly InputAction m_PlayerCamerasnotusing_Movement;
-    public struct PlayerCamerasnotusingActions
+    // Player Camera [delta]
+    private readonly InputActionMap m_PlayerCameradelta;
+    private List<IPlayerCameradeltaActions> m_PlayerCameradeltaActionsCallbackInterfaces = new List<IPlayerCameradeltaActions>();
+    private readonly InputAction m_PlayerCameradelta_Movement;
+    public struct PlayerCameradeltaActions
     {
         private @PlayerControls m_Wrapper;
-        public PlayerCamerasnotusingActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_PlayerCamerasnotusing_Movement;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerCamerasnotusing; }
+        public PlayerCameradeltaActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_PlayerCameradelta_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerCameradelta; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerCamerasnotusingActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerCamerasnotusingActions instance)
+        public static implicit operator InputActionMap(PlayerCameradeltaActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerCameradeltaActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerCamerasnotusingActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerCamerasnotusingActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerCameradeltaActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerCameradeltaActionsCallbackInterfaces.Add(instance);
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
         }
 
-        private void UnregisterCallbacks(IPlayerCamerasnotusingActions instance)
+        private void UnregisterCallbacks(IPlayerCameradeltaActions instance)
         {
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
         }
 
-        public void RemoveCallbacks(IPlayerCamerasnotusingActions instance)
+        public void RemoveCallbacks(IPlayerCameradeltaActions instance)
         {
-            if (m_Wrapper.m_PlayerCamerasnotusingActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerCameradeltaActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerCamerasnotusingActions instance)
+        public void SetCallbacks(IPlayerCameradeltaActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerCamerasnotusingActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerCameradeltaActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerCamerasnotusingActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerCameradeltaActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerCamerasnotusingActions @PlayerCamerasnotusing => new PlayerCamerasnotusingActions(this);
+    public PlayerCameradeltaActions @PlayerCameradelta => new PlayerCameradeltaActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -593,12 +754,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnDodge(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
     public interface IPlayerCameraActions
     {
         void OnMovement(InputAction.CallbackContext context);
     }
-    public interface IPlayerCamerasnotusingActions
+    public interface IPlayerCameradeltaActions
     {
         void OnMovement(InputAction.CallbackContext context);
     }
