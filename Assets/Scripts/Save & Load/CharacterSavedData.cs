@@ -14,7 +14,7 @@ namespace ALEX
         public int sceneIndex = 1;
 
         [Header("CHARACTER NAME")]
-        public string characterName = "0A1L2E3X";
+        public string characterName = "Character";
 
         [Header("TIME PLAYED")]
         public float secondsPlayed;
@@ -23,5 +23,13 @@ namespace ALEX
         public float xPos;
         public float yPos;
         public float zPos;
+
+        [Header("RESOURCES")]
+        public float currentHealth;
+        public float currentStamina;
+
+        [Header("STATS")]
+        public int vitality;
+        public int endurance;
     }
 }

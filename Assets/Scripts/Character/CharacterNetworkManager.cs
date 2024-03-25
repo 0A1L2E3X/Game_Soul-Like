@@ -34,9 +34,18 @@ namespace ALEX
         [Header("STATS")]
         public NetworkVariable<int> endurance =
             new(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        public NetworkVariable<int> vitality =
+            new(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        [Header("RESOURCES")]
         public NetworkVariable<float> currentStamina =
             new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
         public NetworkVariable<int> maxStamina =
+            new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        public NetworkVariable<float> currentHealth =
+            new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        public NetworkVariable<int> maxHealth =
             new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         protected virtual void Awake()

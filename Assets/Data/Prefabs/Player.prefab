@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: -6379849741008374680}
   - component: {fileID: 7227014863995492616}
   - component: {fileID: 7675612139428732508}
+  - component: {fileID: -6311474953871400801}
   - component: {fileID: 1140063182064579661}
   - component: {fileID: -6300567816036578822}
   - component: {fileID: 1870455609788622688}
@@ -383,6 +384,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaRegenerationDelay: 1
   staminaRegenerationAmount: 1
+--- !u!114 &-6311474953871400801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742820773304544049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5584ffc98897bf344b40cd059df887f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectToTest: {fileID: 11400000, guid: 4dd810a2f533bb4449e3266b4f1f4773, type: 2}
+  processEffects: 0
 --- !u!114 &1140063182064579661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f37d516c3ddb04d9bcd5430882cb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityForce: -5.5
+  gravityForce: -9
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -423,10 +438,10 @@ MonoBehaviour:
   rotationSpeed: 15
   sprintSpeed: 7
   sprintingStaminaCost: 5
-  jumpHeight: 1
+  jumpHeight: 1.25
   jumpStaminaCost: 8
-  jumpForwardSpeed: 1.5
-  freeFallSpeed: 4
+  jumpForwardSpeed: 2
+  freeFallSpeed: 2
   dodgeStaminaCost: 25
 --- !u!114 &1870455609788622688
 MonoBehaviour:

@@ -119,7 +119,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_01;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -129,7 +129,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_02;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -139,7 +139,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_03;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -149,7 +149,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_04;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -159,7 +159,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_05;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -169,7 +169,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_06;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -179,7 +179,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_07;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -189,7 +189,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_08;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -199,7 +199,7 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_09;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
@@ -209,11 +209,17 @@ namespace ALEX
             {
                 currentSlotUsing = CharacterSlot.CharacterSlot_10;
                 currentCharacterData = new CharacterSavedData();
-                StartCoroutine(LoadWorldScene());
+                NewGame();
                 return;
             }
 
             TitleScreenManager.instance.DisplayNoFreeCharacter();
+        }
+
+        private void NewGame()
+        {
+            SaveGame();
+            StartCoroutine(LoadWorldScene());
         }
 
         public void LoadGame()

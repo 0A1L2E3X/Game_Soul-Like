@@ -20,6 +20,20 @@ namespace ALEX
             character = GetComponent<CharacterManager>();
         }
 
+        protected virtual void Start()
+        {
+
+        }
+
+        public int CalcuHealthBasedOnLV(int vitality) 
+        {
+            float health = 0;
+
+            health = vitality * 20;
+
+            return Mathf.RoundToInt(health);
+        }
+
         public int CalcuStaminaBasedOnLV(int endurance)
         {
             float stamina = 0;
