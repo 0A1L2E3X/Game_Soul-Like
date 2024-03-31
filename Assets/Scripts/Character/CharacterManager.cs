@@ -7,10 +7,14 @@ namespace ALEX
 {
     public class CharacterManager : NetworkBehaviour
     {
+        [Header("STATUS")]
+        public NetworkVariable<bool> isDead = new(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
         [HideInInspector] public CharacterController characterController;
         [HideInInspector] public Animator animator;
 
         [HideInInspector] public CharacterNetworkManager characterNetworkManager;
+        [HideInInspector] public CharacterEffectsManager characterEffectsManager;
 
         [Header("==== FLAGS ====")]
         public bool isPerformingAction = false;
@@ -26,6 +30,7 @@ namespace ALEX
 
             characterController = GetComponent<CharacterController>();
             characterNetworkManager = GetComponent<CharacterNetworkManager>();
+            characterEffectsManager = GetComponent<CharacterEffectsManager>();
 
             animator = GetComponent<Animator>();
         }

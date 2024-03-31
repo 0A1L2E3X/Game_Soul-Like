@@ -218,6 +218,9 @@ namespace ALEX
 
         private void NewGame()
         {
+            player.playerNetworkManager.vitality.Value = 5;
+            player.playerNetworkManager.endurance.Value = 10;
+
             SaveGame();
             StartCoroutine(LoadWorldScene());
         }
@@ -226,9 +229,11 @@ namespace ALEX
         {
             saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
-            savedFileDataManager = new SavedFileDataManager();
-            savedFileDataManager.saveDataPath = Application.persistentDataPath;
-            savedFileDataManager.saveFileName = saveFileName;
+            savedFileDataManager = new SavedFileDataManager
+            {
+                saveDataPath = Application.persistentDataPath,
+                saveFileName = saveFileName
+            };
             currentCharacterData = savedFileDataManager.LoadSavedFile();
 
             StartCoroutine(LoadWorldScene());
@@ -238,9 +243,11 @@ namespace ALEX
         {
             saveFileName = DetermineFileNameBasedCurrentSlotUsing(currentSlotUsing);
 
-            savedFileDataManager = new SavedFileDataManager();
-            savedFileDataManager.saveDataPath = Application.persistentDataPath;
-            savedFileDataManager.saveFileName = saveFileName;
+            savedFileDataManager = new SavedFileDataManager
+            {
+                saveDataPath = Application.persistentDataPath,
+                saveFileName = saveFileName
+            };
 
             player.SaveGameDataToCurrentCharacter(ref currentCharacterData);
 
@@ -251,9 +258,11 @@ namespace ALEX
         {
             saveFileName = DetermineFileNameBasedCurrentSlotUsing(characterSlot);
 
-            savedFileDataManager = new SavedFileDataManager();
-            savedFileDataManager.saveDataPath = Application.persistentDataPath;
-            savedFileDataManager.saveFileName = saveFileName;
+            savedFileDataManager = new SavedFileDataManager
+            {
+                saveDataPath = Application.persistentDataPath,
+                saveFileName = saveFileName
+            };
             savedFileDataManager.DeleteSavedFile();
         }
 

@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    [Header("==== CAMERA OBJECT ====")]
     public static PlayerCamera instance;
     public PlayerManager player;
     public Camera cameraObject;
     [SerializeField] Transform cameraPivotTransform;
 
     [Header("==== CAMERA SETTING ====")]
+    [Space]
     private float cameraSmoothSpeed = 1;
     [SerializeField] float verticalRotateSpeed = 120;
     [SerializeField] float horizontalRotateSpeed = 120;
@@ -20,6 +22,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] LayerMask collideWithLayers;
 
     [Header("==== CAMERA VALUES ====")]
+    [Space]
     private Vector3 cameraVelocity;
     private Vector3 cameraObjectPos;
     [SerializeField] float horizontalLookAngle;

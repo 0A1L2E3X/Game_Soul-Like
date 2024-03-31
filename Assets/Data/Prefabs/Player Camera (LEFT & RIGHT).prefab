@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9172886516433484003}
-  - component: {fileID: 6744939598384696059}
+  - component: {fileID: 7102775845144084667}
   m_Layer: 0
   m_Name: Player Camera (LEFT & RIGHT)
   m_TagString: Untagged
@@ -183,7 +183,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6744939598384696059
+--- !u!114 &7102775845144084667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  cameraObject: {fileID: 9172886515871840416}
-  cameraPivotTransform: {fileID: 9172886516011222727}
+  cameraObject: {fileID: 0}
+  cameraPivotTransform: {fileID: 0}
   verticalRotateSpeed: 120
   horizontalRotateSpeed: 120
   minPivot: -30
@@ -205,6 +205,6 @@ MonoBehaviour:
   cameraCollisionRadius: 0.2
   collideWithLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   horizontalLookAngle: 0
   verticalLookAngle: 0

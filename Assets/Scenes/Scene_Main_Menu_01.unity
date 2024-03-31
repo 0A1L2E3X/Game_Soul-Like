@@ -429,6 +429,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244224341}
   m_CullTransparentMesh: 1
+--- !u!20 &285403199 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9172886515871840416, guid: ba495955718cd2749ab0acf62938e768,
+    type: 3}
+  m_PrefabInstance: {fileID: 9172886516084944233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &305951166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2701,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095397576}
   m_CullTransparentMesh: 1
+--- !u!4 &1102869924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9172886516011222727, guid: ba495955718cd2749ab0acf62938e768,
+    type: 3}
+  m_PrefabInstance: {fileID: 9172886516084944233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1121532748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,46 +4351,6 @@ PrefabInstance:
     - target: {fileID: 2037921091935582410, guid: 4484e0f5aa2c22341bf3185ef47f9646,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044320946538613280, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044320946538613280, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044320946538613280, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2044320946538613280, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136489009556281393, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136489009556281393, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136489009556281393, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136489009556281393, guid: 4484e0f5aa2c22341bf3185ef47f9646,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3681557088034829815, guid: 4484e0f5aa2c22341bf3185ef47f9646,
@@ -6207,6 +6179,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7102775845144084667, guid: ba495955718cd2749ab0acf62938e768,
+        type: 3}
+      propertyPath: cameraObject
+      value: 
+      objectReference: {fileID: 285403199}
+    - target: {fileID: 7102775845144084667, guid: ba495955718cd2749ab0acf62938e768,
+        type: 3}
+      propertyPath: cameraPivotTransform
+      value: 
+      objectReference: {fileID: 1102869924}
+    - target: {fileID: 7102775845144084667, guid: ba495955718cd2749ab0acf62938e768,
+        type: 3}
+      propertyPath: collideWithLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9172886516433484000, guid: ba495955718cd2749ab0acf62938e768,
         type: 3}
       propertyPath: m_Name

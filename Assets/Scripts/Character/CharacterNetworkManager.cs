@@ -19,6 +19,8 @@ namespace ALEX
         public float networkPositionSmoothTime = 0.1f;
         public float networkRotationSmoothTime = 0.1f;
 
+        [Space]
+
         [Header("ANIMATOR")]
         public NetworkVariable<float> horizontalMovement = 
             new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -27,15 +29,21 @@ namespace ALEX
         public NetworkVariable<float> moveAmount =
             new(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
+        [Space]
+
         [Header("FLAGS")]
         public NetworkVariable<bool> isSprinting =
             new(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        [Space]
 
         [Header("STATS")]
         public NetworkVariable<int> endurance =
             new(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
         public NetworkVariable<int> vitality =
             new(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+        [Space]
 
         [Header("RESOURCES")]
         public NetworkVariable<float> currentStamina =

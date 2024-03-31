@@ -8,6 +8,9 @@ namespace ALEX
     {
         public static WorldCharacterEffectsManager instance;
 
+        [Header("DAMAGE")]
+        public DamageEffects damageEffect;
+
         [SerializeField] List<InstanceEffects> instanceEffects;
 
         private void Awake()

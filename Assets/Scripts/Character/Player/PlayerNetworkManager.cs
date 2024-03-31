@@ -11,7 +11,7 @@ namespace ALEX
         PlayerManager player;
 
         public NetworkVariable<FixedString64Bytes> characterName =
-            new("Character", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+            new("Player", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         protected override void Awake()
         {
